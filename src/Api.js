@@ -81,7 +81,7 @@ export default {
           })
 
 
-          setChatList(data.chats)
+          setChatList(chats)
         }
       }
     })
