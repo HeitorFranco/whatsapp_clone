@@ -1,21 +1,26 @@
-.messageLine{
+.messageLine {
   margin-bottom: 10px;
   display: flex;
 }
-.messageItem{
+.messageItem {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 1px 1px #cccccc;
   display: flex;
   flex-direction: column;
   padding: 3px;
-  max-width: 9l0%;
+  max-width: 90%;
 }
-.messageText{
+.messageText {
   font-size: 14px;
   margin: 5px 40px 5px 5px;
 }
-.messageDate{
+.Image {
+  max-width: 20vw;
+  max-height: 20vw;
+  object-fit: cover;
+}
+.messageDate {
   font-size: 11px;
   color: #999;
   margin-right: 5px;

@@ -1,24 +1,22 @@
-import React from 'react';
-import Api from '../../Api';
+import React from "react";
+import Api from "../../Api";
 
-const Login = ({onReceive}) => {
+const Login = ({ onReceive }) => {
+  const handleFacebookLogin = async () => {
+    let result = await Api.fbPopup();
 
-  const handleFacebookLogin = async () =>{
-    let result = await Api.fbPopup()
-
-    if(result){
-      onReceive(result.user)
+    if (result) {
+      onReceive(result.user);
+    } else {
+      alert("Erro");
     }
-    else{
-      alert('Erro')
-    }
-  }
+  };
 
   return (
     <div>
       <button onClick={handleFacebookLogin}>Login com Google</button>
     </div>
   );
-}
+};
 
 export default Login;

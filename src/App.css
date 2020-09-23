@@ -1,26 +1,51 @@
-*{
-  box-sizing:  border-box;
+* {
+  box-sizing: border-box;
 }
-body{
+body {
   background-color: #d2dbdc;
   margin: 0;
   font-family: "Segoe UI", Helvetica Neue, Helvetica, Arial;
 }
 
-.app-window{
+.app-window {
   display: flex;
   height: 100vh;
   background-color: #ededed;
 }
-.sidebar{
+.sidebar {
+  position: relative;
   width: 35%;
   max-width: 415px;
   display: flex;
   flex-direction: column;
   border-right: 1px solid #ddd;
 }
+.sidebar--config {
+  position: absolute;
+  background: #fff;
+  right: 15px;
+  top: 60px;
+  border-radius: 3px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  width: 150px;
+  overflow: hidden;
+  transition: width 0.1s, height 0.1s, opacity 0.7s;
+}
+.sidebar--config ul {
+  list-style: none;
+  margin: 15px 0;
+  padding: 0;
+}
+.sidebar--config li {
+  padding: 10px 25px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sidebar--config li:hover {
+  background-color: #ededed;
+}
 
-header{
+header {
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -28,18 +53,18 @@ header{
   padding: 0 15px;
 }
 
-.header--avatar{
+.header--avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
 }
 
-.header--buttons{
+.header--buttons {
   display: flex;
 }
 
-.header--btn{
+.header--btn {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -47,14 +72,18 @@ header{
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: ease 0.2s;
+}
+.header--btn.active {
+  background-color: #d5d5d5;
 }
 
-.search{
+.search {
   background-color: #f6f6f6;
   border-bottom: 1px solid #eee;
   padding: 5px 15px;
 }
-.search--input{
+.search--input {
   background-color: #fff;
   height: 40px;
   border-radius: 20px;
@@ -62,7 +91,7 @@ header{
   align-items: center;
   padding: 0 10px;
 }
-.search--input input{
+.search--input input {
   flex: 1;
   border: 0;
   outline: 0;
@@ -70,22 +99,21 @@ header{
   margin-left: 10px;
 }
 
-.chatlist{
+.chatlist {
   flex: 1;
   background-color: #fff;
   overflow-y: auto;
 }
 
-.chatlist::-webkit-scrollbar{
+.chatlist::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
-.chatlist::-webkit-scrollbar-thumb{
-  background-color: rgba(0,0,0,0.2);
-
+.chatlist::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.contentarea{
+.contentarea {
   flex: 1;
 }
