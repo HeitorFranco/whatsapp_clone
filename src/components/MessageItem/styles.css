@@ -16,8 +16,8 @@
   margin: 5px 40px 5px 5px;
 }
 .Image {
-  max-width: 20vw;
-  max-height: 20vw;
+  max-width: min(40vw, 600px);
+  max-height: min(40vw, 600px);
   object-fit: cover;
 }
 .messageDate {

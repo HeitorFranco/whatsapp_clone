@@ -19,6 +19,7 @@ function App() {
   const [user, setUser] = useState(null);
   //const [pendent, setPendent] = useState(false)
   const [moreActive, setMoreActive] = useState(false);
+  const [pendent, setPendent] = useState(false);
 
   const [showNewChat, setShowNewChat] = useState(false);
 
@@ -28,6 +29,24 @@ function App() {
       return unsub;
     }
   }, [user]);
+
+  useEffect(() => {
+    setPendent(true);
+    Api.firebaseApp.auth().onAuthStateChanged((u) => {
+      if (u) {
+        var newUser = {
+          id: u.uid,
+          name: u.displayName,
+          avatar: u.photoURL,
+        };
+        setUser(newUser);
+        Api.addUser(newUser);
+      } else {
+        setUser(null);
+      }
+      setPendent(false);
+    });
+  }, []);
 
   const handleNewChat = () => {
     setShowNewChat(true);
@@ -47,10 +66,10 @@ function App() {
     setMoreActive((old) => !old);
   };
 
-  /*if(pendent){
+  if (pendent) {
     //return(<h1>Loading...</h1>)
-    return(<Loading />)
-  }*/
+    return <Loading />;
+  }
   if (!user) {
     return <Login onReceive={handleLoginData} />;
   }
