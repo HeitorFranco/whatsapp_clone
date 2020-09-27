@@ -186,5 +186,4 @@ export default {
     const url = await storageRef.getDownloadURL();
     return url;
   },
-  getCurrentUser: (setUser) => {},
 };

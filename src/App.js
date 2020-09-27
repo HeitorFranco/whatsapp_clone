@@ -30,24 +30,6 @@ function App() {
     }
   }, [user]);
 
-  useEffect(() => {
-    setPendent(true);
-    Api.firebaseApp.auth().onAuthStateChanged((u) => {
-      if (u) {
-        var newUser = {
-          id: u.uid,
-          name: u.displayName,
-          avatar: u.photoURL,
-        };
-        setUser(newUser);
-        Api.addUser(newUser);
-      } else {
-        setUser(null);
-      }
-      setPendent(false);
-    });
-  }, []);
-
   const handleNewChat = () => {
     setShowNewChat(true);
   };
@@ -66,10 +48,10 @@ function App() {
     setMoreActive((old) => !old);
   };
 
-  if (pendent) {
+  /*if (pendent) {
     //return(<h1>Loading...</h1>)
     return <Loading />;
-  }
+  }*/
   if (!user) {
     return <Login onReceive={handleLoginData} />;
   }
