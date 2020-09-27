@@ -26,11 +26,7 @@ const ChatListItem = ({ onClick, active, data }) => {
         </div>
         <div className="chatListItem--line">
           <div className="chatListItem--lastMsg">
-            <p>
-              {data.lastMessage.includes("https://")
-                ? "Image"
-                : data.lastMessage}
-            </p>
+            <p>{data.type === "img" ? "Image" : data.lastMessage}</p>
           </div>
         </div>
       </div>
