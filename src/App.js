@@ -105,26 +105,14 @@ function App() {
             />
           ))}
         </div>
-        <div
-          className="sidebar--config"
-          style={{
-            width: moreActive ? "150px" : "0px",
-            height: moreActive ? "112px" : "0px",
-            opacity: moreActive ? 1 : 0,
-          }}
-        >
-          <ul>
-            <li>Novo Grupo</li>
-            <li>Sair</li>
-          </ul>
-        </div>
-      </div>
+        
 
       <div className="contentarea">
         {activeChat.chatId !== undefined && (
           <ChatWindow user={user} data={activeChat} />
         )}
         {activeChat.chatId === undefined && <ChatIntro />}
+        
       </div>
     </div>
   );

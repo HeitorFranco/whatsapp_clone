@@ -1,4 +1,4 @@
-.chatIntro{
+.chatIntro {
   background-color: #f8f9fa;
   display: flex;
   align-items: center;
@@ -8,16 +8,16 @@
   border-bottom: 6px solid #4adf83;
 }
 
-.chatIntro img{
+.chatIntro img {
   width: 250px;
 }
-.chatIntro h1{
+.chatIntro h1 {
   font-style: 32px;
   color: #525252;
   font-weight: normal;
   margin-top: 30px;
 }
-.chatIntro h2{
+.chatIntro h2 {
   font-size: 14px;
   color: #777777;
   font-weight: normal;

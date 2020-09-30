@@ -1,38 +1,38 @@
-.chatWindow{
+.chatWindow {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
-.chatWindow--header{
+.chatWindow--header {
   height: 60px;
   border-bottom: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.chatWindow--headerinfo{
+.chatWindow--headerinfo {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-.chatWindow--avatar{
+.chatWindow--avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-left: 15px;
   margin-right: 15px;
 }
-.chatWindow--name{
+.chatWindow--name {
   font-size: 17px;
   color: #000;
 }
-.chatWindow--headerbuttons{
+.chatWindow--headerbuttons {
   display: flex;
   align-items: center;
   margin-right: 15px;
 }
 
-.chatWindow--btn{
+.chatWindow--btn {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -41,42 +41,41 @@
   align-items: center;
   cursor: pointer;
   overflow: hidden;
-  transition: all ease .2s;
+  transition: all ease 0.2s;
 }
 
-.chatWindow--body{
+.chatWindow--body {
   flex: 1;
   overflow-y: auto;
   background-color: #e5ddd5;
   background-size: cover;
   background-position: top;
-  background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
   padding: 20px 30px;
 }
 
-.chatWindow--body::-webkit-scrollbar{
+.chatWindow--body::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
-.chatWindow--body::-webkit-scrollbar-thumb{
-  background-color: rgba(0,0,0,0.2);
-
+.chatWindow--body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.chatWindow--footer{
+.chatWindow--footer {
   height: 62px;
   display: flex;
   align-items: center;
 }
-.chatWindow--pre{
+.chatWindow--pre {
   display: flex;
   margin: 0 15px;
 }
-.chatWindow--inputarea{
+.chatWindow--inputarea {
   flex: 1;
 }
-.chatWindow--input{
+.chatWindow--input {
   width: 100%;
   height: 40px;
   border: 0;
@@ -88,21 +87,21 @@
   padding-left: 15px;
 }
 
-.chatWindow--pos{
+.chatWindow--pos {
   display: flex;
   margin: 0 15px;
 }
 
-.chatWindow--emojiarea{
-  height: 200px ;
+.chatWindow--emojiarea {
+  height: 200px;
   overflow-y: hidden;
-  transition: all ease .3s;
+  transition: all ease 0.3s;
 }
 
-aside.emoji-picker-react{
+aside.emoji-picker-react {
   width: auto !important;
   background: none !important;
 }
-.emoji-picker-react .emoji-group::before{
+.emoji-picker-react .emoji-group::before {
   background: none;
 }
