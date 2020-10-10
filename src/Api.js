@@ -6,15 +6,15 @@ import "firebase/firebase-firestore";
 import firebaseConfig from "./firebaseConfig";
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
-const db = firebaseApp.firestore();
-const storage = firebaseApp.storage();
+const db = firebase.firestore();
+const storage = firebase.storage();
 
 export default {
-  firebaseApp,
+  firebase,
   fbPopup: async () => {
     //const provider = new firebase.auth.FacebookAuthProvider()
     const provider = new firebase.auth.GoogleAuthProvider();
-    let result = await firebaseApp.auth().signInWithPopup(provider);
+    let result = await firebase.auth().signInWithPopup(provider);
     return result;
   },
   addUser: async (u) => {
