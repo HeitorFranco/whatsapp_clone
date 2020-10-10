@@ -69,7 +69,7 @@ function App() {
             className="header--avatar"
             src={user.avatar}
             alt="avatar Image"
-          ></img>
+          />
           <div className="header--buttons">
             <div className="header--btn">
               <DonutLargeIcon style={{ color: "#919191" }} />
@@ -89,7 +89,7 @@ function App() {
             <input
               type="search"
               placeholder="Procurar ou começar uma nova conversa"
-            ></input>
+            />
           </div>
         </div>
 
@@ -105,14 +105,13 @@ function App() {
             />
           ))}
         </div>
-        
+      </div>
 
       <div className="contentarea">
         {activeChat.chatId !== undefined && (
           <ChatWindow user={user} data={activeChat} />
         )}
         {activeChat.chatId === undefined && <ChatIntro />}
-        
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ const Login = ({ onReceive }) => {
     } else {
       alert("Erro");
     }
+    console.log(result);
   };
 
   return (

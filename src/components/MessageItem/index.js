@@ -36,11 +36,9 @@ const MessageItem = ({ data, user, type }) => {
           <>
             <img src={data.body} className="Image"></img>
             <div className="messageDate">{time}</div>
-          </> 
+          </>
         )}*/}
-        <div className="messageText">
-          vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-        </div>
+        <span className="messageText">{data.body}</span>
         <div className="messageDate">{time}</div>
       </div>
     </div>
