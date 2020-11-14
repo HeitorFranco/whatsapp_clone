@@ -38,8 +38,6 @@ const MessageItem = ({ data, user, type }) => {
             <div className="messageDate">{time}</div>
           </>
         )}
-        <span className="messageText">{data.body}</span>
-        <div className="messageDate">{time}</div>
       </div>
     </div>
   );
