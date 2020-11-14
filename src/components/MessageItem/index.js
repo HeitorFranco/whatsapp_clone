@@ -26,7 +26,7 @@ const MessageItem = ({ data, user, type }) => {
         className="messageItem"
         style={{ background: user.id === data.author ? "#dcf8c6" : "#fff" }}
       >
-        {/* {type === "text" && (
+        {type === "text" && (
           <>
             <div className="messageText">{data.body}</div>
             <div className="messageDate">{time}</div>
@@ -37,7 +37,7 @@ const MessageItem = ({ data, user, type }) => {
             <img src={data.body} className="Image"></img>
             <div className="messageDate">{time}</div>
           </>
-        )}*/}
+        )}
         <span className="messageText">{data.body}</span>
         <div className="messageDate">{time}</div>
       </div>
