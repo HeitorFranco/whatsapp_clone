@@ -1,16 +1,13 @@
 import React from "react";
 import Api from "../../Api";
 
-const Login = ({ onReceive }) => {
+const Login = () => {
   const handleFacebookLogin = async () => {
-    let result = await Api.fbPopup();
-
-    if (result) {
-      onReceive(result.user);
-    } else {
-      alert("Erro");
+    try {
+      await Api.fbPopup();
+    } catch (error) {
+      console.log(error);
     }
-    console.log(result);
   };
 
   return (

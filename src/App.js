@@ -1,66 +1,66 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 import ChatIcon from "@material-ui/icons/Chat";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import SearchIcon from "@material-ui/icons/Search";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 import ChatListItem from "./components/ChatListItem";
 import ChatIntro from "./components/ChatIntro";
 import ChatWindow from "./components/ChatWindow";
 import NewChat from "./components/NewChat";
 import Login from "./components/Login";
+import Loading from "./components/Loading";
 import Api from "./Api";
-import firebaseConfig from "./firebaseConfig";
 import firebase from "firebase";
 
 function App() {
   const [chatlist, setChatList] = useState([]);
   const [activeChat, setActiveChat] = useState({});
   const [user, setUser] = useState(null);
-  //const [pendent, setPendent] = useState(false)
-  const [moreActive, setMoreActive] = useState(false);
   const [pendent, setPendent] = useState(false);
 
   const [showNewChat, setShowNewChat] = useState(false);
 
   useEffect(() => {
-    if (user !== null) {
+    if (user) {
       let unsub = Api.onChatList(user.id, setChatList);
-      return unsub;
+      return () => unsub;
     }
   }, [user]);
 
   useEffect(() => {
+    setPendent(true);
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        console.log(1);
         let newUser = {
           id: user.uid,
           name: user.displayName,
           avatar: user.photoURL,
         };
-
         Api.addUser(newUser);
         setUser(newUser);
+      } else {
+        setUser(null);
       }
+      setPendent(false);
     });
-    //firebase.auth().signOut();
   }, []);
+
+  const SignOut = () => {
+    firebase.auth().signOut();
+  };
 
   const handleNewChat = () => {
     setShowNewChat(true);
   };
 
-  const handleMore = (e) => {
-    setMoreActive((old) => !old);
-  };
-
-  /*if (pendent) {
-    //return(<h1>Loading...</h1>)
+  if (pendent) {
     return <Loading />;
-  }*/
+  }
   if (!user) {
-    return <Login onReceive={() => {}} />;
+    return <Login />;
   }
   return (
     <div className="app-window">
@@ -79,13 +79,10 @@ function App() {
           />
           <div className="header--buttons">
             <div className="header--btn">
-              <DonutLargeIcon style={{ color: "#919191" }} />
+              <ExitToAppIcon style={{ color: "#919191" }} onClick={SignOut} />
             </div>
             <div className="header--btn">
               <ChatIcon onClick={handleNewChat} style={{ color: "#919191" }} />
-            </div>
-            <div className={`header--btn ${moreActive ? "active" : ""}`}>
-              <MoreVertIcon onClick={handleMore} style={{ color: "#919191" }} />
             </div>
           </div>
         </header>

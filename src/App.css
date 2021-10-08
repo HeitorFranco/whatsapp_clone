@@ -73,9 +73,6 @@ header {
   cursor: pointer;
   transition: ease 0.2s;
 }
-.header--btn.active {
-  background-color: #d5d5d5;
-}
 
 .search {
   background-color: #f6f6f6;

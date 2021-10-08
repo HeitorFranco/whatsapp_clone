@@ -104,18 +104,12 @@ const ChatWindow = ({ user, data }) => {
         </div>
 
         <div className="chatWindow--headerbuttons">
-          <div className="chatWindow--btn">
-            <SearchIcon style={{ color: "#919191" }} />
-          </div>
           <input id="if" type="file" onChange={handleFile} hidden></input>
           <label for="if">
             <div className="chatWindow--btn">
               <AttachFileIcon style={{ color: "#919191" }} />
             </div>
           </label>
-          <div className="chatWindow--btn">
-            <MoreHorizIcon style={{ color: "#919191" }} />
-          </div>
         </div>
       </header>
       <div className="chatWindow--body" ref={body}>
