@@ -11,7 +11,8 @@ import ChatWindow from "./components/ChatWindow";
 import NewChat from "./components/NewChat";
 import Login from "./components/Login";
 import Api from "./Api";
-import Loading from "./components/Loading";
+import firebaseConfig from "./firebaseConfig";
+import firebase from "firebase";
 
 function App() {
   const [chatlist, setChatList] = useState([]);
@@ -30,18 +31,24 @@ function App() {
     }
   }, [user]);
 
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        let newUser = {
+          id: user.uid,
+          name: user.displayName,
+          avatar: user.photoURL,
+        };
+
+        Api.addUser(newUser);
+        setUser(newUser);
+      }
+    });
+    //firebase.auth().signOut();
+  }, []);
+
   const handleNewChat = () => {
     setShowNewChat(true);
-  };
-
-  const handleLoginData = async (u) => {
-    let newUser = {
-      id: u.uid,
-      name: u.displayName,
-      avatar: u.photoURL,
-    };
-    await Api.addUser(newUser);
-    setUser(newUser);
   };
 
   const handleMore = (e) => {
@@ -53,7 +60,7 @@ function App() {
     return <Loading />;
   }*/
   if (!user) {
-    return <Login onReceive={handleLoginData} />;
+    return <Login onReceive={() => {}} />;
   }
   return (
     <div className="app-window">
