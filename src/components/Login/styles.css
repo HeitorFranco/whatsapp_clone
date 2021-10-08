@@ -10,8 +10,7 @@
   background-color: #f5f5f5;
 }
 
-.btn-google,
-.btn-facebook {
+.btn-google {
   font-family: "Poppins", sans-serif;
   display: flex;
   align-items: center;
@@ -39,15 +38,4 @@
 .btn-google img {
   height: 30px;
   margin: 5px;
-}
-
-.btn-facebook {
-  background-color: #3b5999;
-}
-.btn-facebook:hover {
-  background-color: #324a80;
-}
-
-.btn-facebook img {
-  height: 30px;
 }

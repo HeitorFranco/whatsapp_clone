@@ -16,11 +16,6 @@ export default {
     let result = await firebase.auth().signInWithPopup(provider);
     return result;
   },
-  fbPopup: async () => {
-    const provider = new firebase.auth.FacebookAuthProvider();
-    let result = await firebase.auth().signInWithPopup(provider);
-    return result;
-  },
   addUser: async (u) => {
     await db.collection("users").doc(u.id).set(
       {

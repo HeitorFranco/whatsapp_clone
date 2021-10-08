@@ -33,7 +33,7 @@ function App() {
     setPendent(true);
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log(1);
+        console.log(user);
         let newUser = {
           id: user.uid,
           name: user.displayName,
