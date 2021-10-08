@@ -11,9 +11,13 @@ const storage = firebase.storage();
 
 export default {
   firebase,
-  fbPopup: async () => {
-    //const provider = new firebase.auth.FacebookAuthProvider()
+  googlePopup: async () => {
     const provider = new firebase.auth.GoogleAuthProvider();
+    let result = await firebase.auth().signInWithPopup(provider);
+    return result;
+  },
+  fbPopup: async () => {
+    const provider = new firebase.auth.FacebookAuthProvider();
     let result = await firebase.auth().signInWithPopup(provider);
     return result;
   },
