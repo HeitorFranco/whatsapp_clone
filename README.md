@@ -4,7 +4,7 @@
 </h1>
 
 <p align="center">
-<img alt="whatsapp" src=".github/whatsapp.jpg" width="50%">
+<img alt="whatsapp" src=".github/whatsapp.png" width="100%">
 </p>
 
 ## 🛠 Tecnologias
