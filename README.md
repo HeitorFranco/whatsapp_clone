@@ -1,5 +1,5 @@
 <h1 align="center" style="height: 50px; color: #7AD06D">
-  <img align="center" alt="whatsapp" title="whatsapp" src=".github/whatsappIcon.png" />
+  <img align="center" alt="whatsapp" title="whatsapp" src=".github/whatsappIcon.png" height="50px" />
   Whatsapp Clone
 </h1>
 
